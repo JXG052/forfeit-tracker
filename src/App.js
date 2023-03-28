@@ -1,11 +1,23 @@
+import React, { useState } from 'react'
+import PlayerCard from './components/PlayerCard';
+import PlayerCountTable from './components/PlayerCountTable';
+import { database } from './firebaseConfig'
+import { collection, getDocs } from "firebase/firestore";
 
-import './App.css';
+
 
 function App() {
-  return (
-    <div className="App">
 
-    </div>
+
+
+  return (
+    <>
+      <PlayerCountTable
+        name="Duckett"
+      />
+    </>
+
+
   );
 }
 
