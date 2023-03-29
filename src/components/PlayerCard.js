@@ -21,12 +21,19 @@ export default function PlayerCard(props) {
         myName = "Jonny"
     } else if (props.name === "Duckett") {
         myName = "Duckett"
+    } else if (props.name === "Steel") {
+        myName = "Steel"
+    } else if (props.name === "Phil") {
+        myName = "Phil"
+    } else {
+        myName = "Sam"
     }
 
     return (
-        <>
+        <Box sx={{border: '1pt solid black'}}>
 
+            <Typography variant='h1'>{myName}</Typography>
             <PlayerCountTable name={myName} />
-        </>
+        </Box>
     )
 }
