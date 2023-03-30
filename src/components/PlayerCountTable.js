@@ -18,22 +18,40 @@ export default function PlayerCountTable(props) {
     const [name, setName] = useState("")
     const [threePutts, setThreePutts] = useState("")
     const [triples, setTriples] = useState("")
+    const [bunker, setBunker] = useState("")
+    const [late, setLate] = useState("");
+    const [nr, setNr] = useState("");
+    const [shed, setShed] = useState("");
+    const [tree, setTree] = useState("");
+    const [water, setWater] = useState("");
     let key;
-    
-    const checkGolfer = (name) =>{
-        if (name === "Jonny") {
-            key = 1
-        } else if (name === "Duckett") {
-            key = 0
-        } else {
-            key = 2
-        }
-    }
-    
 
-    // function createData(forfeitName, count) {
-    //     return { forfeitName, count };
-    // }
+    const checkGolfer = (name) => {
+        switch (name) {
+            case 'Jonny':
+                key = 2;
+                break;
+            case 'Duckett':
+                key = 0;
+                break;
+            case 'Steel':
+                key = 3;
+                break;
+            case 'Sam':
+                key = 4;
+                break;
+            case 'Matty':
+                key = 1;
+                break;
+
+        }
+
+    }
+
+
+    function createData(forfeitName, count) {
+        return { forfeitName, count };
+    }
 
 
     useEffect(() => {
@@ -48,21 +66,30 @@ export default function PlayerCountTable(props) {
             setName(myData[key].name)
             setThreePutts(myData[key].threePutts)
             setTriples(myData[key].triples)
-            // rows = [
-            //     createData('Triple or above', myData[0].name),
-            //     createData('3 putt', "0"),
-            //     createData('Bunker Bitch', "0"),
-            //     createData('Water on 17', 0),
-            //     createData('Shed', 0),
-            //     createData('SG Money Tree', 0),
-            //     createData("N/R's", 0),
-            //     createData('FedEx ranking'),
-            //     createData('Late for tee time', 0)
-            // ];
+            setBunker(myData[key].bunker)
+            setLate(myData[key].late)
+            setNr(myData[key].nr)
+            setShed(myData[key].shed)
+            setTree(myData[key].tree)
+            setWater(myData[key].water)
 
         })
 
-    }, [])
+    }, [props.name])
+
+    const rows = [
+        createData('Triple or above', triples),
+        createData('3 putt', threePutts),
+        createData('Bunker Bitch', bunker),
+        createData('Water on 17', water),
+        createData('Shed', shed),
+        createData('SG Money Tree', tree),
+        createData("N/R's", nr),
+        createData('Late for tee time', late),
+        createData('FedEx ranking'),
+        createData('Total', triples + threePutts + bunker + water + shed + tree + nr + late)
+
+    ];
 
 
 
@@ -81,38 +108,30 @@ export default function PlayerCountTable(props) {
 
 
     return (
-        <div>
-            <p>
-            name = {name}
-            </p>
-            <p>
-            {name} has had {triples} triples
-            </p>
-            <p>
-                {name} has had {threePutts} threePutts
-            </p>
-        </div>
-        // <TableContainer sx={{ padding: '1rem' }} component={Paper}>
-        //     <Table size="small" aria-label="a dense table">
-        //         <TableHead>
-        //             <TableRow>
-        //                 <TableCell>Forfeit</TableCell>
-        //                 <TableCell align="right">Count</TableCell>
-        //             </TableRow>
-        //         </TableHead>
-        //         <TableBody>
-        //             {rows.map((row) => (
-        //                 <TableRow
-        //                     key={row.forfeitName}
-        //                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-        //                     <TableCell component="th" scope="row">
-        //                         {row.forfeitName}
-        //                     </TableCell>
-        //                     <TableCell align='right'>{row.count}</TableCell>
-        //                 </TableRow>
-        //             ))}
-        //         </TableBody>
-        //     </Table>
-        // </TableContainer>
+        <>
+            
+            <TableContainer sx={{ padding: '1rem' }} component={Paper}>
+                <Table size="small" aria-label="a dense table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Forfeit</TableCell>
+                            <TableCell align="right">Count</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <TableRow
+                                key={row.forfeitName}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                <TableCell component="th" scope="row">
+                                    {row.forfeitName}
+                                </TableCell>
+                                <TableCell align='right'>{row.count}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PlayerCountTable from './PlayerCountTable';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box, Container } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -13,55 +14,26 @@ import Paper from '@mui/material/Paper';
 
 
 export default function PlayerCard(props) {
+    let myName;
+    if (props.name === "Matty") {
+        myName = "Matty"
+    } else if (props.name === "Jonny") {
+        myName = "Jonny"
+    } else if (props.name === "Duckett") {
+        myName = "Duckett"
+    } else if (props.name === "Steel") {
+        myName = "Steel"
+    } else if (props.name === "Phil") {
+        myName = "Phil"
+    } else {
+        myName = "Sam"
+    }
 
-    // function createData(name, count) {
-    //     return { name, count };
-    // }
-
-    // const rows = [
-    //     createData('Triple or above', "0"),
-    //     createData('3 putt', "0"),
-    //     createData('Bunker Bitch', "0"),
-    //     createData('Water on 17', 0),
-    //     createData('Shed', 0),
-    //     createData('SG Money Tree', 0),
-    //     createData("N/R's", 0),
-    //     createData('FedEx ranking'),
-    //     createData('Late for tee time', 0)
-    // ];
     return (
-        <>
-            {/* <CssBaseline />
-            <Container maxWidth="sm" sx={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Box sx={{ border: '1pt solid black', height: '80vh', width: '90%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'Center' }}>
-                    <Typography variant='h5'>{props.name}</Typography>
-                    <TableContainer sx={{ padding: '1rem' }} component={Paper}>
-                        <Table size="small" aria-label="a dense table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Forfeit</TableCell>
-                                    <TableCell align="right">Count</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {rows.map((row) => (
-                                    <TableRow
-                                        key={row.name}
-                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                                        <TableCell component="th" scope="row">
-                                            {row.name}
-                                        </TableCell>
-                                        <TableCell align='right'>{row.count}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+        <Box sx={{border: '1pt solid black'}}>
 
-                </Box> */}
-            {/* </Container> */}
-            {/* <div>{props.name}</div> */}
-            <button onClick={() => console.log(props)} />
-        </>
+            <Typography variant='h1'>{myName}</Typography>
+            <PlayerCountTable name={myName} />
+        </Box>
     )
 }
