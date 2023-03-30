@@ -109,7 +109,7 @@ export default function PlayerCountTable(props) {
 
     return (
         <>
-            <p>{name}</p>
+            
             <TableContainer sx={{ padding: '1rem' }} component={Paper}>
                 <Table size="small" aria-label="a dense table">
                     <TableHead>
