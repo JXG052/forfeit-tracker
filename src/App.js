@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import PlayerCard from './components/PlayerCard';
 import PlayerCountTable from './components/PlayerCountTable';
-import { database } from './firebaseConfig'
+import  database  from './firebaseConfig'
 import { collection, getDocs } from "firebase/firestore";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import AddForfeitCard from './components/AddForfeitCard';
+import NewGolfer from './components/NewGolfer';
+import Increment from './components/Increment';
+import GetData from './components/GetData';
+// import MyAuthentification from './components/MyAuthentification';
 
 
 
 function App() {
   const [user, setUser] = useState("")
+  
   const options = [
     'Jonny', 'Duckett', 'Matty'
   ];
@@ -26,14 +32,20 @@ function App() {
     setUser("Duckett")
     console.log("Duck chose")
   }
-  
+
 
   return (
     <>
-      <button onClick={chooseMatty}>Choose Matty</button>
+      {/* <AddForfeitCard name={user} /> */}
+
+      {/* <button onClick={chooseMatty}>Choose Matty</button>
       <button onClick={chooseJonny}>chooseJonny</button>
       <button onClick={chooseDuckett}>Choose Duckett</button>
-      <PlayerCard name={user} />
+      <PlayerCard name={user} /> */}
+      {/* <MyAuthentification /> */}
+      {/* <Increment /> */}
+      {/* <AddForfeitCard /> */}
+      <GetData />
     </>
 
 
