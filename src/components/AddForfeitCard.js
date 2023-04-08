@@ -1,70 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { doc, collection, updateDoc, onSnapshot, getDocs } from 'firebase/firestore';
+import React, { useState } from 'react'
+import { doc,  updateDoc } from 'firebase/firestore';
 import { database } from '../firebaseConfig'
 import './AddForfeitCard.css'
-
 import { MenuItem, Button, Box, InputLabel, FormControl, Select } from '@mui/material';
 
-export default function AddForfeitCard(prop) {
-    // const userRef = database.collection("golfers").doc(prop.name);
-    
-    // const [data, setData] = useState({})
-    // const [name, setName] = useState("")
-    // const [threePutts, setThreePutts] = useState(userRef.threePutts)
-    // const [triples, setTriples] = useState("")
-    // const [bunker, setBunker] = useState("")
-    // const [late, setLate] = useState("");
-    // const [nr, setNr] = useState("");
-    // const [shed, setShed] = useState("");
-    // const [tree, setTree] = useState("");
-    // const [water, setWater] = useState("");
+export default function AddForfeitCard() {
     const [forfeit, setForfeit] = useState("")
-    const [count, setCount] = useState(0)
     const [golfer, setGolfer] = useState("")
-
+    
     const chooseGolfer = (event) => {
         setGolfer(event.target.value)
-        console.log(event.target.value)
+        console.log(golfer)
     }
 
     const chooseForfeit = (event) => {
-        let selectedForfeit = event.target.value
-        setForfeit(selectedForfeit)
-        console.log(forfeit)
+        setForfeit(event.target.value)
+        
     }
 
-    const handleSubmit = () => {
-        console.log(
-            `Data to be added to database:
-            Golfer: ${golfer}
-            Forfeit: ${forfeit}`)
-        const golfersRef = doc(database, "golfers", golfer);
-        updateDoc(golfersRef, {
-            [forfeit] : 1
+    function incrementCount(golferName, forfeitName) {
+       
+        const docRef = doc(database, "golfers", golferName);
+        updateDoc(docRef, {
+            [forfeitName]: +1
         })
-        alert("Data Added")
+        .then(() => {
+            console.log("Field updated successfully")
+        }).catch(error => {
+            console.error("Error whiilst updating field")
+        })
     }
-
-    const getData =  () => {
-        const collectionRef = collection(database, "golfers");
-        // getDocs(collectionRef).then((data) => {
-        //     console.log(
-        //         data.docs.map((item) =>{
-        //             return item.data();
-        //         })
-        //     )
-        // })
-        onSnapshot(collectionRef, (data) => {
-            console.log(
-                data.docs.map((item) => {
-                    return item.data();
-                })
-            )
-        })
-    };
-
-
-
 
     return (
         <>
@@ -94,11 +59,11 @@ export default function AddForfeitCard(prop) {
                         label='golfer'
                         onChange={chooseGolfer}
                     >
-                        <MenuItem value={"Jonny"}>Jonny</MenuItem>
-                        <MenuItem value={"Duck"}>Duck</MenuItem>
-                        <MenuItem value={"Sam"}>Sam</MenuItem>
-                        <MenuItem value={"Matty"}>Matty</MenuItem>
-                        <MenuItem value={"Steel"}>Steel</MenuItem>
+                        <MenuItem value="Jonny">Jonny</MenuItem>
+                        <MenuItem value="Duckett">Duckett</MenuItem>
+                        <MenuItem value="Sam">Sam</MenuItem>
+                        <MenuItem value="Matty">Matty</MenuItem>
+                        <MenuItem value="Steel">Steel</MenuItem>
                     </Select>
 
                 </FormControl>
@@ -113,18 +78,20 @@ export default function AddForfeitCard(prop) {
                         label='forfeit'
                         onChange={chooseForfeit}
                     >
-                        <MenuItem value={"triple"}>Triple</MenuItem>
-                        <MenuItem value={"threePutt"}>Three Putt</MenuItem>
-                        <MenuItem value={"bunker"}>Stayed in Bunker</MenuItem>
-                        <MenuItem value={"late"}>Late for tee time</MenuItem>
-                        <MenuItem value={"nr"}>N/R</MenuItem>
-                        <MenuItem value={"shed"}>Shed</MenuItem>
-                        <MenuItem value={"tree"}>Sam Glaves' Money Tree</MenuItem>
-                        <MenuItem value={"water"}>Water</MenuItem>
+                        <MenuItem value="triple">Triple</MenuItem>
+                        <MenuItem value="threePutt">Three Putt</MenuItem>
+                        <MenuItem value="bunker">Stayed in Bunker</MenuItem>
+                        <MenuItem value="late">Late for tee time</MenuItem>
+                        <MenuItem value="nr">N/R</MenuItem>
+                        <MenuItem value="shed">Shed</MenuItem>
+                        <MenuItem value="tree">Sam Glaves' Money Tree</MenuItem>
+                        <MenuItem value="water">Water</MenuItem>
                     </Select>
                 </FormControl>
-                <Button align="center" variant='contained' onClick={handleSubmit}>Confirm</Button>
-                <Button align="center" variant='contained' onClick={getData}>Get Collection</Button>
+                <Button align="center" variant='contained' onClick={() => {
+                    incrementCount(golfer, forfeit)
+                }}>Confirm</Button>
+
             </Box>
         </>
     )
