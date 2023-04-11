@@ -79,7 +79,7 @@ export default function AddForfeitCard() {
                         onChange={chooseForfeit}
                     >
                         <MenuItem value="triple">Triple</MenuItem>
-                        <MenuItem value="threePutt">Three Putt</MenuItem>
+                        <MenuItem value="threePutts">Three Putt</MenuItem>
                         <MenuItem value="bunker">Stayed in Bunker</MenuItem>
                         <MenuItem value="late">Late for tee time</MenuItem>
                         <MenuItem value="nr">N/R</MenuItem>
@@ -88,7 +88,7 @@ export default function AddForfeitCard() {
                         <MenuItem value="water">Water</MenuItem>
                     </Select>
                 </FormControl>
-                <Button align="center" variant='contained' onClick={() => {
+                <Button className='my-btn' align="center" variant='contained' onClick={() => {
                     incrementCount(golfer, forfeit)
                 }}>Confirm</Button>
 

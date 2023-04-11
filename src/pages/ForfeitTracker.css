@@ -1,0 +1,6 @@
+.dataCard {
+    border: 2pt solid green;
+    max-width: 80%;
+    margin: 5rem auto;
+    border-radius: 15px;
+}

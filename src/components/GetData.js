@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { app, database } from "../firebaseConfig"
 import { addDoc, collection, getDocs, onSnapshot } from "firebase/firestore"
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
-
+import './GetData.css'
 export default function GetData({ info }) {
     const [data, setData] = useState(info)
 
@@ -46,13 +46,13 @@ export default function GetData({ info }) {
                 {JSON.stringify(data)}
             </div> */}
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="forfeit-table">
-                    <TableHead>
+                <Table aria-label="forfeit-table">
+                    <TableHead className="table-header">
                         <TableRow>
-                            <TableCell>Forfeit</TableCell>
-                            <TableCell align="right">{data[0].name}</TableCell>
-                            <TableCell align="right">{data[1].name}</TableCell>
-                            <TableCell align="right">{data[2].name}</TableCell>
+                            <TableCell className='table-header-content'>Forfeit</TableCell>
+                            <TableCell align="right" className='table-header-content'>{data[0].name}</TableCell>
+                            <TableCell align="right" className='table-header-content'>{data[1].name}</TableCell>
+                            <TableCell align="right" className='table-header-content'>{data[2].name}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
 import PlayerCard from './components/PlayerCard';
 import PlayerCountTable from './components/PlayerCountTable';
 import { database } from './firebaseConfig'
@@ -10,7 +11,10 @@ import NewGolfer from './components/NewGolfer';
 import useCounter from './components/counter-hook';
 import GetData from './components/GetData';
 import Home from './pages/Home'
+import NavBar from './components/NavBar';
+
 import './App.css'
+import ForfeitTracker from './pages/ForfeitTracker';
 // import AddForfeitCard from './components/AddForfeitCard';
 // import MyAuthentification from './components/MyAuthentification';
 
@@ -29,7 +33,8 @@ function App() {
     })
   };
   useEffect(() => {
-    getData();
+    getData()
+    
   }, [data])
 
   // const options = [
@@ -54,7 +59,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Home info={data}/>
+      <NavBar />
+      {/* <Home info={data}/> */}
       {/* {JSON.stringify(data)} */}
       {/* <AddForfeitCard name={user} /> */}
 
@@ -64,9 +70,14 @@ function App() {
       <PlayerCard name={user} /> */}
       {/* <MyAuthentification /> */}
 
-      <AddForfeitCard />
-      {/* <GetData info={data} /> */}
       
+      {/* <GetData info={JSON.stringify(data)} /> */}
+
+      
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
+      </Routes>
     </div>
 
 
