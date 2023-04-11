@@ -2,3 +2,10 @@
     background-color: black;
     color: greenyellow;
 }
+
+.add-forfeit-card {
+    max-width: 80%;
+    margin: 10rem auto;
+    padding: 50px;
+    background-color: greenyellow !important;
+}
