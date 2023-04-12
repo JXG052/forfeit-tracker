@@ -12,13 +12,21 @@ import useCounter from './components/counter-hook';
 import GetData from './components/GetData';
 import Home from './pages/Home'
 import NavBar from './components/NavBar';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { green, lightGreen } from '@mui/material/colors';
 
 import './App.css'
 import ForfeitTracker from './pages/ForfeitTracker';
 // import AddForfeitCard from './components/AddForfeitCard';
 // import MyAuthentification from './components/MyAuthentification';
 
-
+const myTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: green,
+    secondary: lightGreen,
+  },
+})
 
 function App() {
   const [data, setData] = useState(null)
@@ -58,7 +66,9 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <ThemeProvider theme={myTheme}>
+      <CssBaseline />
+    
       <NavBar />
       {/* <Home info={data}/> */}
       {/* {JSON.stringify(data)} */}
@@ -67,7 +77,7 @@ function App() {
       {/* <button onClick={chooseMatty}>Choose Matty</button>
       <button onClick={chooseJonny}>chooseJonny</button>
       <button onClick={chooseDuckett}>Choose Duckett</button>
-      <PlayerCard name={user} /> */}
+    <PlayerCard name={user} /> */}
       {/* <MyAuthentification /> */}
 
       
@@ -78,7 +88,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
       </Routes>
-    </div>
+    
+    </ThemeProvider>
 
 
 

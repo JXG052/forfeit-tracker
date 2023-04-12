@@ -10,17 +10,17 @@ import './NavBar.css'
 
 
 export default function NavBar() {
-  return (
-      <Box  sx={{ flexGrow: 1 }}>
-          <AppBar position="static" className='nav-bar'>
-              <Toolbar >
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static" className='nav-bar' sx={{ bgcolor: 'primary.900' }}>
+                <Toolbar >
 
-                  <Typography variant="h3" component="div" sx={{ flexGrow: 1, color: "white !important" }}>
-                      <NavLink to="/" sx={{ color: "white !important"}}>The Golf Group</NavLink>
-                  </Typography>
-                  <Button color="inherit"><NavLink sx={{color: "white !important"}}to="/ForfeitTracker" >Forfeits</NavLink></Button>
-              </Toolbar>
-          </AppBar>
-      </Box>
-  )
+                    <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+                        <NavLink to="/" >The Golf Group</NavLink>
+                    </Typography>
+                    <Button color="inherit"><NavLink to="/ForfeitTracker" >Forfeits</NavLink></Button>
+                </Toolbar>
+            </AppBar>
+        </Box>
+    )
 }
