@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { app, database } from '../firebaseConfig.js'
-import { doc, setDoc, collection, addDoc } from 'firebase/firestore'
+import { database } from '../firebaseConfig.js'
+import { collection, addDoc } from 'firebase/firestore'
 
 export default function NewGolfer() {
     const collectionRef = collection(database, 'golfers');

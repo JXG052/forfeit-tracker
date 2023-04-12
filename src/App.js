@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import PlayerCard from './components/PlayerCard';
-import PlayerCountTable from './components/PlayerCountTable';
+import { Route, Routes } from 'react-router-dom'
 import { database } from './firebaseConfig'
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
-import AddForfeitCard from './components/AddForfeitCard';
-import NewGolfer from './components/NewGolfer';
-import useCounter from './components/counter-hook';
-import GetData from './components/GetData';
+import { collection, onSnapshot } from "firebase/firestore";
 import Home from './pages/Home'
 import NavBar from './components/NavBar';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { green, lightGreen } from '@mui/material/colors';
-
 import './App.css'
 import ForfeitTracker from './pages/ForfeitTracker';
 // import AddForfeitCard from './components/AddForfeitCard';
