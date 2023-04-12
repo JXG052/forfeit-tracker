@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react"
-import { app, database } from "../firebaseConfig"
-import { addDoc, collection, getDocs, onSnapshot } from "firebase/firestore"
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
+import { useState } from "react"
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
 import './GetData.css'
 export default function GetData({ info }) {
-    const [data, setData] = useState(info)
+    const [data] = useState(info)
 
 
     // function createData(forfeitName, Jonny, Sam, Duck) {

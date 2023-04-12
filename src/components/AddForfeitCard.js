@@ -3,7 +3,7 @@ import { doc,  updateDoc } from 'firebase/firestore';
 import { database } from '../firebaseConfig'
 import './AddForfeitCard.css'
 import { MenuItem, Button, Box, InputLabel, FormControl, Select } from '@mui/material';
-import { spacing } from '@mui/system';
+
 
 export default function AddForfeitCard() {
     const [forfeit, setForfeit] = useState("")
