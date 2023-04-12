@@ -49,7 +49,7 @@ export default function GetData({ info }) {
                 <Table aria-label="forfeit-table">
                     <TableHead className="table-header">
                         <TableRow>
-                            <TableCell className='table-header-content'>Forfeit</TableCell>
+                            <TableCell className='table-header-content'></TableCell>
                             <TableCell align="right" className='table-header-content'>{data[0].name}</TableCell>
                             <TableCell align="right" className='table-header-content'>{data[1].name}</TableCell>
                             <TableCell align="right" className='table-header-content'>{data[2].name}</TableCell>

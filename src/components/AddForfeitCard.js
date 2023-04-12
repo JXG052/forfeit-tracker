@@ -3,6 +3,7 @@ import { doc,  updateDoc } from 'firebase/firestore';
 import { database } from '../firebaseConfig'
 import './AddForfeitCard.css'
 import { MenuItem, Button, Box, InputLabel, FormControl, Select } from '@mui/material';
+import { spacing } from '@mui/system';
 
 export default function AddForfeitCard() {
     const [forfeit, setForfeit] = useState("")
@@ -48,8 +49,9 @@ export default function AddForfeitCard() {
             <h1>{golfer}</h1>
             <h2>{forfeit}</h2>
             <h2>{count}</h2> */}
-            <Box sx={{ minWidth: 120, display: 'flex', flexDirection: 'column' }}>
-                <FormControl fullWidth>
+            <Box sx={{ minWidth: 120, display: 'flex', flexDirection: 'column', p: 2, m: 2 }}>
+                
+                <FormControl sx={{ m: 2}}>
                     <InputLabel id="select-golfer-label">Golfer</InputLabel>
                     <Select
                         className='selectOption'
@@ -58,6 +60,7 @@ export default function AddForfeitCard() {
                         value={golfer}
                         label='golfer'
                         onChange={chooseGolfer}
+                        
                     >
                         <MenuItem value="Jonny">Jonny</MenuItem>
                         <MenuItem value="Duckett">Duckett</MenuItem>
@@ -67,7 +70,7 @@ export default function AddForfeitCard() {
                     </Select>
 
                 </FormControl>
-                <FormControl fullWidth>
+                <FormControl sx={{ m: 2}}>
 
                     <InputLabel id="select-forfeit-label">Forfeit</InputLabel>
                     <Select
