@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import AddForfeitCard from '../components/AddForfeitCard'
 import { Card, Typography } from '@mui/material'
@@ -7,6 +7,7 @@ import ImageAvatars from '../components/ImageAvatars'
 
 
 export default function Home() {
+    
 
     return (
         <>
