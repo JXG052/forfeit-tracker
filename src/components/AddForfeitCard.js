@@ -36,19 +36,11 @@ export default function AddForfeitCard() {
     };
 
 
-    // const action = (
-    //     <React.Fragment>
-    //         <Button color="secondary" size="small" onClick={handleClose}>
-    //             UNDO
-    //         </Button>
 
-    //     </React.Fragment>
-    // )
     const handleSnackbarClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
         }
-
         SetSnackbarOpen(false);
     }
     const getCorrectMessage = (forf) => {
@@ -122,15 +114,7 @@ export default function AddForfeitCard() {
             </div>
         )
     }
-    // } else if (snackbarOpen){
-    //     return (
-    //         <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleToastClose}>
-    //             <Alert onClose={handleToastClose} severity="success" sx={{ width: '100%' }}>
-    //                 This is a success message!
-    //             </Alert>
-    //         </Snackbar>
-    //     )
-    // }
+
 
     return (
         <>
