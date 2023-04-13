@@ -9,7 +9,7 @@ export default function GetData({ info }) {
     //     return { forfeitName, Jonny, Sam, Duck };
     // }
     const getTotal = (data) => {
-        let sum = data.tree + data.water + data.bunker + data.triples + data.late + data.nr + data.threePutts + data.shed; 
+        let sum = data.tree + data.water + data.bunker + data.triple + data.late + data.nr + data.threePutt + data.shed; 
         return sum;
     }
 
@@ -56,15 +56,15 @@ export default function GetData({ info }) {
                     <TableBody>
                         <TableRow >
                             <TableCell component='th' scope="row">Triple Bogeys</TableCell>
-                            <TableCell align="right">{data[0].triples}</TableCell>
-                            <TableCell align="right">{data[1].triples}</TableCell>
-                            <TableCell align="right">{data[2].triples}</TableCell>
+                            <TableCell align="right">{data[0].triple}</TableCell>
+                            <TableCell align="right">{data[1].triple}</TableCell>
+                            <TableCell align="right">{data[2].triple}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell component='th' scope="row">Three Putts</TableCell>
-                            <TableCell align="right">{data[0].threePutts}</TableCell>
-                            <TableCell align="right">{data[1].threePutts}</TableCell>
-                            <TableCell align="right">{data[2].threePutts}</TableCell>
+                            <TableCell align="right">{data[0].threePutt}</TableCell>
+                            <TableCell align="right">{data[1].threePutt}</TableCell>
+                            <TableCell align="right">{data[2].threePutt}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell component='th' scope="row">Sam Glaves' Tree</TableCell>
