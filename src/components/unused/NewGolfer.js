@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { database } from '../firebaseConfig.js'
+import { database } from '../../firebaseConfig.js'
 import { collection, addDoc } from 'firebase/firestore'
 
 export default function NewGolfer() {
