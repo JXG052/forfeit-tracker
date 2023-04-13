@@ -61,6 +61,8 @@ export default function AddForfeitCard() {
                 return "hit Sam's tree on the 5th";
             case 'water':
                 return "went in the pond";
+            default: 
+                break;
         }
     }
 
