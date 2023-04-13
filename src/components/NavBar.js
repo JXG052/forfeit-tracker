@@ -9,6 +9,7 @@ import './NavBar.css'
 
 
 
+
 export default function NavBar() {
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -18,6 +19,7 @@ export default function NavBar() {
                     <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
                         <NavLink to="/" >The Golf Group</NavLink>
                     </Typography>
+                    
                     <Button color="inherit"><NavLink to="/ForfeitTracker" >Forfeits</NavLink></Button>
                 </Toolbar>
             </AppBar>
