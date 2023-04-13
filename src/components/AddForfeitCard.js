@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, increment } from 'firebase/firestore';
 import { database } from '../firebaseConfig'
 // import './AddForfeitCard.css'
 import { MenuItem, Button, Box, InputLabel, FormControl, Select } from '@mui/material';
@@ -23,13 +23,13 @@ export default function AddForfeitCard() {
 
 
     const chooseGolfer = (event) => {
+        event.preventDefault()
         setGolfer(event.target.value)
-        console.log(golfer)
     }
 
     const chooseForfeit = (event) => {
+        event.preventDefault()
         setForfeit(event.target.value)
-
     }
     const handleClose = () => {
         setAlertOpen(false);
@@ -45,7 +45,7 @@ export default function AddForfeitCard() {
     }
     const getCorrectMessage = (forf) => {
         switch (forf) {
-            case 'threePutts':
+            case 'threePutt':
                 return "made a three putt";
             case 'triple':
                 return "made a Triple Bogey";
@@ -61,7 +61,7 @@ export default function AddForfeitCard() {
                 return "hit Sam's tree on the 5th";
             case 'water':
                 return "went in the pond";
-            default: 
+            default:
                 break;
         }
     }
@@ -71,9 +71,8 @@ export default function AddForfeitCard() {
 
         const docRef = doc(database, "golfers", golferName);
         updateDoc(docRef, {
-            [forfeitName]: +1
+            [forfeitName]: increment(1)
         })
-
             .then(() => {
                 console.log("updated successfully")
                 setGolfer("");
@@ -169,7 +168,7 @@ export default function AddForfeitCard() {
                         onChange={chooseForfeit}
                     >
                         <MenuItem value="triple">Triple</MenuItem>
-                        <MenuItem value="threePutts">Three Putt</MenuItem>
+                        <MenuItem value="threePutt">Three Putt</MenuItem>
                         <MenuItem value="bunker">Stayed in Bunker</MenuItem>
                         <MenuItem value="late">Late for tee time</MenuItem>
                         <MenuItem value="nr">N/R</MenuItem>
@@ -183,6 +182,8 @@ export default function AddForfeitCard() {
                 }}>Confirm</Button>
 
             </Box>
+            <div>Golfer = {golfer}</div>
+            <div>forfeit = {forfeit}</div>
             <Snackbar open={snackbarOpen} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={6000} onClose={handleSnackbarClose}>
                 <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
                     {`Forfeit successfully added`}
