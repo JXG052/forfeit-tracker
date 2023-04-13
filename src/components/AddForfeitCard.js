@@ -197,9 +197,9 @@ export default function AddForfeitCard() {
                 }}>Confirm</Button>
 
             </Box>
-            <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+            <Snackbar open={snackbarOpen} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} autoHideDuration={6000} onClose={handleSnackbarClose}>
                 <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
-                    This is a success message!
+                    {`Forfeit successfully added`}
                 </Alert>
             </Snackbar>
         </>
