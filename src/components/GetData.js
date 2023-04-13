@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material'
-import './GetData.css'
+// import './GetData.css'
 export default function GetData({ info }) {
     const [data] = useState(info)
 
