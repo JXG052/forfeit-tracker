@@ -4,7 +4,7 @@ import { database } from '../firebaseConfig'
 // import './AddForfeitCard.css'
 import { MenuItem, Button, Box, InputLabel, FormControl, Select } from '@mui/material';
 import Alert from '@mui/material/Alert';
-import AlertDialog from './AlertDialog';
+
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
