@@ -28,7 +28,7 @@ export default function ForfeitTracker(props) {
   }
   return (
     <div>
-      <Card variant='outlined' className='dataCard' sx={{ m: 10, p: 10}}>
+      <Card variant='outlined' className='dataCard' sx={{ m: 1, p: 1}}>
       <Typography variant='h3'>Total Forfeits</Typography>
       <GetData info={data}/>
       </Card>

@@ -9,6 +9,7 @@ import './NavBar.css'
 
 
 
+
 export default function NavBar() {
     return (
         <Box sx={{ flexGrow: 1 }}>

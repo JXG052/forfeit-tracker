@@ -8,6 +8,11 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { green, lightGreen } from '@mui/material/colors';
 import './App.css'
 import ForfeitTracker from './pages/ForfeitTracker';
+import Jonny from './pages/Jonny';
+import Sam from './pages/Sam';
+import Duck from './pages/Duck';
+import Matty from './pages/Matty';
+import Steel from './pages/Steel';
 // import AddForfeitCard from './components/AddForfeitCard';
 // import MyAuthentification from './components/MyAuthentification';
 
@@ -78,6 +83,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
+        <Route path='/Jonny' element={<Jonny info={data[1]} />} />
+        <Route path='/Sam' element={<Sam info={data[3]} />} />
+        <Route path='/Duck' element={<Duck info={data[0]} />} />
+        <Route path='/Matty' element={<Matty info={data[2]} />} />
+        <Route path='/Steel' element={<Steel info={data[4]} />} />
       </Routes>
     
     </ThemeProvider>
