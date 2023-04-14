@@ -79,7 +79,7 @@ export default function Steel({ info }) {
                             </TableCell>
                             <TableCell align="right">{data.water}</TableCell>
                         </TableRow>
-                        <TableRow key="water">
+                        <TableRow key="total">
                             <TableCell component="th" scope="row">
                                 Total
                             </TableCell>

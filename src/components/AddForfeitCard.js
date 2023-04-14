@@ -177,7 +177,7 @@ export default function AddForfeitCard() {
                         <MenuItem value="water">Water</MenuItem>
                     </Select>
                 </FormControl>
-                <Button className='my-btn' align="center" variant='contained' onClick={() => {
+                <Button className='my-btn' align="center" variant='contained' sx={{bgcolor: 'primary.700', color: 'secondary.200'}} onClick={() => {
                     setAlertOpen(true)
                 }}>Confirm</Button>
 
