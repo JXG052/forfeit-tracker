@@ -4,7 +4,7 @@ import { database } from './firebaseConfig'
 import { collection, onSnapshot } from "firebase/firestore";
 import Home from './pages/Home'
 import NavBar from './components/NavBar';
-import { ThemeProvider, createTheme, CssBaseline, Avatar, Stack } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { green, lightGreen } from '@mui/material/colors';
 import './App.css'
 import ForfeitTracker from './pages/ForfeitTracker';

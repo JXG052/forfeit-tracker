@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Home.css'
 import AddForfeitCard from '../components/AddForfeitCard'
 import { Card, Typography } from '@mui/material'
