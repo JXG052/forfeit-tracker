@@ -31,55 +31,55 @@ export default function Duck({ info }) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow key="triples">
+                        <TableRow key="duckTriples">
                             <TableCell component="th" scope="row">
                                 Triple Bogey's
                             </TableCell>
                             <TableCell align="right">{data.triple}</TableCell>
                         </TableRow>
-                        <TableRow key="threePutts">
+                        <TableRow key="duckThreePutts">
                             <TableCell component="th" scope="row">
                                 Three Putts
                             </TableCell>
                             <TableCell align="right">{data.threePutt}</TableCell>
                         </TableRow>
-                        <TableRow key="lates">
+                        <TableRow key="duckLates">
                             <TableCell component="th" scope="row">
                                 Lates
                             </TableCell>
                             <TableCell align="right">{data.late}</TableCell>
                         </TableRow>
-                        <TableRow key="bunkers">
+                        <TableRow key="duckBunkers">
                             <TableCell component="th" scope="row">
                                 Stayed in bunkers
                             </TableCell>
                             <TableCell align="right">{data.bunker}</TableCell>
                         </TableRow>
-                        <TableRow key="nrs">
+                        <TableRow key="duckNrs">
                             <TableCell component="th" scope="row">
                                 N/R's
                             </TableCell>
                             <TableCell align="right">{data.nr}</TableCell>
                         </TableRow>
-                        <TableRow key="sheds">
+                        <TableRow key="duckSheds">
                             <TableCell component="th" scope="row">
                                 Shed balls
                             </TableCell>
                             <TableCell align="right">{data.shed}</TableCell>
                         </TableRow>
-                        <TableRow key="trees">
+                        <TableRow key="duckTrees">
                             <TableCell component="th" scope="row">
                                 Sam's Tree
                             </TableCell>
                             <TableCell align="right">{data.tree}</TableCell>
                         </TableRow>
-                        <TableRow key="water">
+                        <TableRow key="duckWater">
                             <TableCell component="th" scope="row">
                                 Water balls
                             </TableCell>
                             <TableCell align="right">{data.water}</TableCell>
                         </TableRow>
-                        <TableRow key="water">
+                        <TableRow key="duckTotal">
                             <TableCell component="th" scope="row">
                                 Total
                             </TableCell>
