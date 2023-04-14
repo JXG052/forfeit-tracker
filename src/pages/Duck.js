@@ -20,8 +20,15 @@ export default function Duck({ info }) {
     }
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Avatar alt="Alex Duckett" sx={{ m: 2, width: 112, height: 112 }} src="./images/duck.jpg" />
-            <Typography variant="h3">{data.name}</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 2 }}>
+
+                <Avatar alt="Alex Duckett" sx={{ m: 2, width: 112, height: 112 }} src="./images/duck.jpg" />
+                <Typography variant="h3">{data.name}</Typography>
+                <Typography variant='p'>{data.profile}</Typography>
+                <br></br>
+                <Typography variant='p'>Handicap: {data.handicap}</Typography>
+                <Typography variant='p'>FedEx Ranking: {data.ranking}</Typography>
+            </Box>
             <TableContainer component={Paper}>
                 <Table sx={{ maxWidth: 500 }} aria-label="customized table">
                     <TableHead>
