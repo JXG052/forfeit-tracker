@@ -69,7 +69,7 @@ export default function Footer() {
         >
             <Grid container direction="column" alignItems="center" spacing={1}>
                 <Grid item>
-                    <Typography variant="h6" sx={{ fontFamily: 'Montserrat', color: 'common.white' }}>
+                    <Typography variant="h6" sx={{ fontFamily: 'Montserrat', color: 'secondary.300' }}>
                         The Golf Group
                     </Typography>
                 </Grid>
