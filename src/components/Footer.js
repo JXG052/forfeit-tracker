@@ -61,8 +61,11 @@ export default function Footer() {
         //     </Box>
         // </Box>
         <Box
-            position="static"
-            sx={{ bgcolor: 'primary.900', display: 'flex', flexDirection: 'column', py: 1 }}
+            position="absolute"
+            bottom="0"
+            left='0'
+            right='0'
+            sx={{ bgcolor: 'primary.900', display: 'flex', flexDirection: 'column', mb: 0, pb: 0 }}
         >
             <Grid container direction="column" alignItems="center" spacing={1}>
                 <Grid item>
