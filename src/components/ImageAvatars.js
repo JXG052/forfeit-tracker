@@ -3,6 +3,8 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital'; 
+import { Badge } from '@mui/material';
 
 
 export default function ImageAvatars() {
@@ -19,11 +21,15 @@ export default function ImageAvatars() {
                     <Link to="/Matty">
                     <Avatar alt="Matty Bent" src="./images/matty.jpg" sx={{ width: 56, height: 56 }} />
                     </Link>
-                    <Link to="/steel">
-                    <Avatar alt="Adam Steel" src="./images/steel.jpg" sx={{ width: 56, height: 56 }} />
-                    </Link>
+                    <Badge badgeContent={<LocalHospitalIcon color='warning' />}>
                     <Link to="/Sam">
                         <Avatar alt="Sam Glaves" src="./images/sam.jpg" sx={{width:56, height:56}}/>
+                    </Link>
+                    </Badge>
+                    <Link to="/steel">
+                    <Badge badgeContent={<LocalHospitalIcon color='error'/>}  >
+                    <Avatar alt="Adam Steel" src="./images/steel.jpg" sx={{ width: 56, height: 56 }} />
+                    </Badge>
                     </Link>
                 </Stack>
             </Box>
