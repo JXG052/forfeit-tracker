@@ -65,11 +65,12 @@ export default function Footer() {
             bottom="0"
             left='0'
             right='0'
-            sx={{ bgcolor: 'primary.900', display: 'flex', flexDirection: 'column', mb: 0, pb: 0 }}
+            sx={{ bgcolor: 'primary.900', display: 'flex', flexDirection: 'column', mb: 0, pb: 0, mt: 5 }}
+            className="myFooter"
         >
             <Grid container direction="column" alignItems="center" spacing={1}>
                 <Grid item>
-                    <Typography variant="h6" sx={{ fontFamily: 'Montserrat', color: 'secondary.300' }}>
+                    <Typography variant="h6" sx={{ fontFamily: 'Montserrat', color: 'secondary.200' }}>
                         The Golf Group
                     </Typography>
                 </Grid>

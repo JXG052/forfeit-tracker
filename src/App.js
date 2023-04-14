@@ -14,9 +14,7 @@ import Duck from './pages/Duck';
 import Matty from './pages/Matty';
 import Steel from './pages/Steel';
 import MoneyList from './pages/MoneyList';
-import Footer from './components/Footer';
-// import AddForfeitCard from './components/AddForfeitCard';
-// import MyAuthentification from './components/MyAuthentification';
+// import Footer from './components/Footer';
 
 const myTheme = createTheme({
   palette: {
@@ -40,60 +38,35 @@ function App() {
   };
   useEffect(() => {
     getData()
-    
+
   }, [data])
 
-  // const options = [
-  //   'Jonny', 'Duckett', 'Matty'
-  // ];
-
-  // const chooseMatty = () => {
-  //   setUser("Matty")
-  //   console.log("Matty chose")
-  // }
-  // const chooseJonny = () => {
-  //   setUser("Jonny")
-  //   console.log("Jonny chose")
-  // }
-  // const chooseDuckett = () => {
-  //   setUser("Duckett")
-  //   console.log("Duck chose")
-  // }
   if (!data) {
     return (<div>loading...</div>)
   }
 
   return (
-    <ThemeProvider theme={myTheme}>
-      <CssBaseline />
-    
-      <NavBar />
-      {/* <Home info={data}/> */}
-      {/* {JSON.stringify(data)} */}
-      {/* <AddForfeitCard name={user} /> */}
+    <>
+      <ThemeProvider theme={myTheme}>
+        <CssBaseline />
 
-      {/* <button onClick={chooseMatty}>Choose Matty</button>
-      <button onClick={chooseJonny}>chooseJonny</button>
-      <button onClick={chooseDuckett}>Choose Duckett</button>
-    <PlayerCard name={user} /> */}
-      {/* <MyAuthentification /> */}
+        <NavBar />
 
-      
-      {/* <GetData info={JSON.stringify(data)} /> */}
 
-      
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
-        <Route path='/Jonny' element={<Jonny info={data[1]} />} />
-        <Route path='/Sam' element={<Sam info={data[3]} />} />
-        <Route path='/Duck' element={<Duck info={data[0]} />} />
-        <Route path='/Matty' element={<Matty info={data[2]} />} />
-        <Route path='/Steel' element={<Steel info={data[4]} />} />
-        <Route path='/MoneyList' element={<MoneyList />}></Route>
-      </Routes>
-    <Footer />
-    </ThemeProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
+          <Route path='/Jonny' element={<Jonny info={data[1]} />} />
+          <Route path='/Sam' element={<Sam info={data[3]} />} />
+          <Route path='/Duck' element={<Duck info={data[0]} />} />
+          <Route path='/Matty' element={<Matty info={data[2]} />} />
+          <Route path='/Steel' element={<Steel info={data[4]} />} />
+          <Route path='/MoneyList' element={<MoneyList info={data} />}></Route>
+        </Routes>
+        {/* <Footer /> */}
+      </ThemeProvider>
+
+    </>
 
 
 
