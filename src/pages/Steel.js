@@ -90,7 +90,7 @@ export default function Steel({ info }) {
                             <TableCell component="th" scope="row">
                                 Total
                             </TableCell>
-                            <TableCell align="right">{getTotal(data)}</TableCell>
+                            <TableCell align="right">£{getTotal(data)}</TableCell>
                         </TableRow>
 
                     </TableBody>
