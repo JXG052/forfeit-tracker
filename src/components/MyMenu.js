@@ -116,7 +116,7 @@ export default function BasicMenu() {
                 >
                     Golfer
                 </MenuItem>
-                <MenuItem onClick={handleClose}><NavLink to="/MoneyList" >2023 MoneyList</NavLink></MenuItem>
+                <MenuItem onClick={handleClose}><NavLink to="/MoneyList" >FedEx Leaderboard</NavLink></MenuItem>
             </Menu>
         </div>
     );
