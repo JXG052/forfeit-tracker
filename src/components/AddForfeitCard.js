@@ -153,6 +153,8 @@ export default function AddForfeitCard() {
                         <MenuItem value="Sam">Sam</MenuItem>
                         <MenuItem value="Matty">Matty</MenuItem>
                         <MenuItem value="Steel">Steel</MenuItem>
+                        <MenuItem value="Phil">Phil</MenuItem>
+                        <MenuItem value="Lewis">Lewis</MenuItem>
                     </Select>
 
                 </FormControl>
