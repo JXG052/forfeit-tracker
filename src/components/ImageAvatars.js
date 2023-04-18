@@ -11,7 +11,7 @@ export default function ImageAvatars() {
     return (
 
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', m: 2 }}>
-            <Stack direction="row" spacing={1.5}>
+            <Stack direction="row" spacing={2} sx={{mb:2}}>
                 <Link to="/Jonny">
                     <Avatar alt="Jonny Green" src="./images/jonny.jpg" sx={{ width: 56, height: 56 }} />
                 </Link>
@@ -24,6 +24,9 @@ export default function ImageAvatars() {
                 <Link to="/Lewis">
                     <Avatar alt="Lewis Evans" src="./images/lewis.jpg" sx={{ width: 56, height: 56 }} />
                 </Link>
+            </Stack>
+            <Stack direction="row" spacing={2}>
+
                 <Link to="/Phil">
                     <Avatar alt="Phil Green" src="./images/phil.jpg" sx={{ width: 56, height: 56 }} />
                 </Link>
