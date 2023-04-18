@@ -14,6 +14,8 @@ import Duck from './pages/Duck';
 import Matty from './pages/Matty';
 import Steel from './pages/Steel';
 import MoneyList from './pages/MoneyList';
+import Lewis from './pages/Lewis';
+import Phil from './pages/Phil';
 // import Footer from './components/Footer';
 
 const myTheme = createTheme({
@@ -57,10 +59,12 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
           <Route path='/Jonny' element={<Jonny info={data[1]} />} />
-          <Route path='/Sam' element={<Sam info={data[3]} />} />
+          <Route path='/Sam' element={<Sam info={data[5]} />} />
           <Route path='/Duck' element={<Duck info={data[0]} />} />
-          <Route path='/Matty' element={<Matty info={data[2]} />} />
-          <Route path='/Steel' element={<Steel info={data[4]} />} />
+          <Route path='/Matty' element={<Matty info={data[3]} />} />
+          <Route path='/Lewis' element={<Lewis info={data[2]} />} />
+          <Route path='/Steel' element={<Steel info={data[6]} />} />
+          <Route path='/Phil' element={<Phil info={data[4]} />} />
           <Route path='/MoneyList' element={<MoneyList info={data} />}></Route>
         </Routes>
         {/* <Footer /> */}
