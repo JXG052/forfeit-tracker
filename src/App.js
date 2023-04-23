@@ -16,6 +16,7 @@ import Steel from './pages/Steel';
 import MoneyList from './pages/MoneyList';
 import Lewis from './pages/Lewis';
 import Phil from './pages/Phil';
+import SignIn from './pages/tggLogin';
 // import Footer from './components/Footer';
 
 const myTheme = createTheme({
@@ -56,7 +57,7 @@ function App() {
 
 
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home info={data}/>} />
           <Route path='/ForfeitTracker' element={<ForfeitTracker data={data} />} />
           <Route path='/Jonny' element={<Jonny info={data[1]} />} />
           <Route path='/Sam' element={<Sam info={data[5]} />} />
@@ -68,6 +69,7 @@ function App() {
           <Route path='/MoneyList' element={<MoneyList info={data} />}></Route>
         </Routes>
         {/* <Footer /> */}
+        {/* <SignIn /> */}
       </ThemeProvider>
 
     </>
