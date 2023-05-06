@@ -39,13 +39,7 @@ export default function MoneyListTable({ info }) {
                         <TableCell>{data[1].bestFinish}</TableCell>
                         <TableCell>{data[1].points} points</TableCell>
                     </TableRow>
-                    <TableRow key="0">
-                        <TableCell>{data[5].ranking}</TableCell>
-                        <TableCell>{data[5].name}</TableCell>
-                        <TableCell>{data[5].rounds}</TableCell>
-                        <TableCell>{data[5].bestFinish}</TableCell>
-                        <TableCell>{data[5].points} points</TableCell>
-                    </TableRow>
+
                     <TableRow key="0">
                         <TableCell>{data[3].ranking}</TableCell>
                         <TableCell>{data[3].name}</TableCell>
@@ -59,6 +53,13 @@ export default function MoneyListTable({ info }) {
                         <TableCell>{data[2].rounds}</TableCell>
                         <TableCell>{data[2].bestFinish}</TableCell>
                         <TableCell>{data[2].points} points</TableCell>
+                    </TableRow>
+                    <TableRow key="0">
+                        <TableCell>{data[5].ranking}</TableCell>
+                        <TableCell>{data[5].name}</TableCell>
+                        <TableCell>{data[5].rounds}</TableCell>
+                        <TableCell>{data[5].bestFinish}</TableCell>
+                        <TableCell>{data[5].points} points</TableCell>
                     </TableRow>
                     <TableRow key="0">
                         <TableCell>{data[4].ranking}</TableCell>
